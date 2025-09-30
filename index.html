@@ -21,14 +21,16 @@
             @apply text-gray-600 flex-shrink-0; /* flex-shrink-0 prevents tabs from shrinking on small screens */
             padding: 10px 20px;
             cursor: pointer;
-            border-bottom: 3px solid transparent;
+            border-bottom: 4px solid transparent; /* Base underline, transparent by default */
             font-weight: 600;
             white-space: nowrap;
             transition: color 0.2s, border-color 0.2s;
         }
-        /* Active tab style */
+        /* Active tab style - Plain CSS for reliability */
         .tab.active {
-            @apply text-blue-600 border-blue-600;
+            color: black;
+            border-bottom-color: black;
+            font-weight: 700; /* Corresponds to font-bold */
         }
         /* Style for list items */
         .list-item {
@@ -124,7 +126,10 @@
 
         <!-- Submit a Special Page -->
         <div id="submit-page" class="p-4 sm:p-6 md:p-8 hidden">
-            <h1 class="text-3xl font-bold text-gray-800 mb-8">Submit a Special</h1>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Submit a Special</h1>
+            <p class="text-sm text-gray-600 mb-8">
+                To adjust or request removal of an existing special please notate in the Special Details what change is requested or please feel free to send us an email at southpadrespecials@gmail.com
+            </p>
             <form id="submit-form" class="space-y-6 bg-white p-6 rounded-lg shadow">
                 <div>
                     <label for="business-name" class="block text-sm font-medium text-gray-700">Business Name</label>
