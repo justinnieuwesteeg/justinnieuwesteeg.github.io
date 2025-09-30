@@ -6,6 +6,7 @@
     <title>South Padre Live</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
     <style>
         /* Apply base styles to the body for font, background, and text color */
         body {
@@ -96,10 +97,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
         
-        <!-- Logo -->
-        <div class="flex justify-center h-20 flex-grow">
-             <img src="https://raw.githubusercontent.com/justinnieuwesteeg/South-Padre-Live/366f7cc9b0015210b4cfbe291cd35ade07de20e5/NEON%20LOGO%20CUT.PNG" alt="South Padre Live Logo" class="h-full object-contain">
+        <!-- Logo and Tagline -->
+        <div class="flex flex-col md:flex-row justify-center items-center flex-grow py-2 md:h-32">
+            <img src="https://raw.githubusercontent.com/justinnieuwesteeg/South-Padre-Live/366f7cc9b0015210b4cfbe291cd35ade07de20e5/NEON%20LOGO%20CUT.PNG" alt="South Padre Live Logo" class="h-16 md:h-full object-contain">
+            <div class="block mt-2 md:mt-0 md:ml-4">
+                <img src="https://github.com/justinnieuwesteeg/South-Padre-Live/blob/main/your%20home.png?raw=true" alt="Slogan: Your home for South Padre Island's food and drink specials" class="h-12 md:h-24 object-contain">
+            </div>
         </div>
+        
         <div class="w-10 h-10"></div> <!-- Spacer to balance the menu button -->
     </header>
 
@@ -435,12 +440,12 @@
                         <span>${special.name || ''}</span>
                         <div class="flex items-center">${iconsHTML}</div>
                     </div>
-                    <div class="md:col-span-3 text-sm text-black">
+                    <div class="text-base md:text-sm md:col-span-3 text-black">
                         <div>${special.location || ''}</div>
                         ${special.phone ? `<div class="mt-1 text-gray-600">${special.phone}</div>` : ''}
                     </div>
-                    <div class="md:col-span-2 text-sm text-black">${special.hours || ''}</div>
-                    <div class="md:col-span-4 text-sm text-black whitespace-pre-wrap">${special.special || ''}</div>
+                    <div class="text-base md:text-sm md:col-span-2 text-black">${special.hours || ''}</div>
+                    <div class="text-base md:text-sm md:col-span-4 text-black whitespace-pre-wrap">${special.special || ''}</div>
                 `;
                 listItem.addEventListener('click', () => toggleSpecialExpansion(listItem, special.name));
                 listContainer.appendChild(listItem);
