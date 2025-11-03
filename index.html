@@ -59,6 +59,15 @@
             scrollbar-width: none;  /* Firefox */
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3KGW4P8FM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3KGW4P8FM');
+    </script>
 </head>
 <body class="antialiased">
 
@@ -445,7 +454,7 @@
                         ${special.phone ? `<div class="mt-1 text-gray-600">${special.phone}</div>` : ''}
                     </div>
                     <div class="text-base md:text-sm md:col-span-2 text-black">${special.hours || ''}</div>
-                    <div class="text-base md:text-sm md:col-span-4 text-black whitespace-pre-wrap">${special.special || ''}</div>
+                    <div class="text-base md:text-sm md:col-TBD-4 text-black whitespace-pre-wrap">${special.special || ''}</div>
                 `;
                 listItem.addEventListener('click', () => toggleSpecialExpansion(listItem, special.name));
                 listContainer.appendChild(listItem);
@@ -592,4 +601,5 @@
 
 </body>
 </html>
+
 
