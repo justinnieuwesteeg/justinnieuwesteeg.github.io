@@ -17,6 +17,25 @@
     <!-- PWA Manifest (Embedded for Single File Portability) -->
     <link rel="manifest" id="manifest-placeholder">
 
+    <!-- STRUCTURED DATA (SCHEMA MARKUP) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "South Padre Live",
+      "description": "Your home for South Padre Island's food and drink specials. Connecting locals and visitors with the best deals on the island.",
+      "image": "https://raw.githubusercontent.com/justinnieuwesteeg/South-Padre-Live/14de6e1468c550b4f41bd844a7a2d4efcf31ee79/Gemini_Generated_Image_hr4njehr4njehr4n%20(1).png",
+      "email": "southpadrespecials@gmail.com",
+      "areaServed": {
+        "@type": "City",
+        "name": "South Padre Island",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "url": "https://southpadrelive.com" 
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
@@ -694,7 +713,7 @@
             "Friday": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEOyBKBeFcFFxe6KUxPz4h2HuUGKagHsHmMiFzm-M6ummkSd71O-1HBMEvKZ6zmZYAOPdzS8HL2dyd/pub?gid=406940710&single=true&output=csv",
             "Saturday": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEOyBKBeFcFFxe6KUxPz4h2HuUGKagHsHmMiFzm-M6ummkSd71O-1HBMEvKZ6zmZYAOPdzS8HL2dyd/pub?gid=981161527&single=true&output=csv"
         };
-        const submissionUrl = "https://script.google.com/macros/s/AKfycbyj6AHMyFwR16dGBqNoczaSQ2phFMVngTgP9-nQy11QL2xuCs2utK2Z2q6R6F1dWiPm7w/exec";
+        const submissionUrl = "https://script.google.com/macros/s/AKfycbzhaZBTq9WTgrDaplr8AwsXBoaif4tOaIIxRwFBM--sOiY6iPh0ctarLIEoH1BHc0SuEg/exec";
 
         // --- DOM Element References ---
         const listContainer = document.getElementById('specials-list');
@@ -1251,4 +1270,3 @@
     </script>
 </body>
 </html>
-
