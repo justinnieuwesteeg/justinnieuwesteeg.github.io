@@ -301,7 +301,7 @@
                 <h1 class="text-3xl font-bold text-slate-800 dark:text-white mb-2 tracking-tight">Submit a Special</h1>
                 <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg">
                     <p class="text-sm text-blue-700 dark:text-blue-300">
-                        To adjust or request removal of an existing special, please notate the requested change in the <strong>Special Details</strong> field, or email us directly at <a href="mailto:southpadrespecials@gmail.com" class="underline font-semibold hover:text-blue-800 dark:hover:text-blue-200">southpadrespecials@gmail.com</a>.
+                        To adjust or request removal of an existing special, please notate the requested change in the <strong>Special Details</strong> field, email us at <a href="mailto:southpadrespecials@gmail.com" class="underline font-semibold hover:text-blue-800 dark:hover:text-blue-200">southpadrespecials@gmail.com</a>, or message us on <a href="https://www.facebook.com/profile.php?id=61584571743809" target="_blank" rel="noopener noreferrer" class="underline font-semibold hover:text-blue-800 dark:hover:text-blue-200">Facebook</a>.
                     </p>
                 </div>
                 
@@ -367,9 +367,21 @@
                         </div>
                         <p class="text-slate-600 dark:text-slate-300 mb-6">Have a question, a suggestion, or just want to say hello? We'd love to hear from you!</p>
                         <div class="space-y-4">
+                            <!-- Email Option -->
                             <a href="mailto:southpadrespecials@gmail.com" class="flex items-center p-4 rounded-lg bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors group">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 text-slate-400 dark:text-slate-500 group-hover:text-brand-teal transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                                <span class="text-brand-teal font-medium">southpadrespecials@gmail.com</span>
+                                <span class="text-brand-teal font-medium break-all">southpadrespecials@gmail.com</span>
+                            </a>
+
+                            <!-- Facebook Option -->
+                            <a href="https://www.facebook.com/profile.php?id=61584571743809" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 rounded-lg bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors group">
+                                <svg class="h-6 w-6 mr-4 text-slate-400 dark:text-slate-500 group-hover:text-[#1877F2] transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                </svg>
+                                <div class="flex flex-col">
+                                    <span class="text-brand-teal font-medium">Message us on Facebook</span>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Follow for updates & more info</span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -594,7 +606,8 @@
         const manifest = {
             "name": "South Padre Live",
             "short_name": "SPI Live",
-            "start_url": ".",
+            // UPDATED FOR ANALYTICS: Track home screen launches
+            "start_url": "./?utm_source=homescreen&utm_medium=pwa",
             "display": "standalone",
             "background_color": "#000000", // Changed to Black for splash
             "theme_color": "#000000", // Changed to Black for status bar during splash
@@ -713,7 +726,8 @@
             "Friday": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEOyBKBeFcFFxe6KUxPz4h2HuUGKagHsHmMiFzm-M6ummkSd71O-1HBMEvKZ6zmZYAOPdzS8HL2dyd/pub?gid=406940710&single=true&output=csv",
             "Saturday": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEOyBKBeFcFFxe6KUxPz4h2HuUGKagHsHmMiFzm-M6ummkSd71O-1HBMEvKZ6zmZYAOPdzS8HL2dyd/pub?gid=981161527&single=true&output=csv"
         };
-        const submissionUrl = "https://script.google.com/macros/s/AKfycbzhaZBTq9WTgrDaplr8AwsXBoaif4tOaIIxRwFBM--sOiY6iPh0ctarLIEoH1BHc0SuEg/exec";
+        // ⚠️ CHECK THIS URL: Ensure this matches the Web App URL you generated in the previous step
+        const submissionUrl = "https://script.google.com/macros/s/AKfycbyj6AHMyFwR16dGBqNoczaSQ2phFMVngTgP9-nQy11QL2xuCs2utK2Z2q6R6F1dWiPm7w/exec";
 
         // --- DOM Element References ---
         const listContainer = document.getElementById('specials-list');
@@ -1121,8 +1135,8 @@
         // ***************************************************************
         // To prevent automatic revocation by GitHub, we split the key.
         // Ideally, restrict this key in Google Cloud Console to your specific domain (https://console.cloud.google.com/apis/credentials)
-        const keyPart1 = "AIzaSyAQCR6zvbs-Oonr"; // Paste first half here
-        const keyPart2 = "DLwdQKvdF6e2VhDEbWU"; // Paste second half here
+        const keyPart1 = "AIzaSyAPEyiwK2YzHWXvZC6"; // Paste first half here
+        const keyPart2 = "Ko6GLqUBYR2jYiiE"; // Paste second half here
         const apiKey = keyPart1 + keyPart2; 
         // ***************************************************************
 
